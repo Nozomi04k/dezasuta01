@@ -71,20 +71,23 @@ img {
 
 .work1-3 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   max-width: 960px;
   margin: auto;
 }
 
-.work1-3 :first-child {
+.work1-3 h1 {
   padding: 10px 15px;
-  margin: auto;
   font-size: 25px;
   border-right: white;
 }
+
+.work1-3 ul {
+  display: flex;
+}
 .work1-3 li {
-  flex-basis: 100px;
+  padding: 5px 20px;
   text-align: center;
   font-size: 13px;
   border-right: 1px solid black;
@@ -97,7 +100,9 @@ img {
   .work1-3 {
     display: block;
   }
-
+  .work1-3 ul {
+    display: block;
+  }
   .work1-3 li {
     max-width: 100%;
     margin: 10px;
@@ -106,9 +111,5 @@ img {
     border-right: initial;
     border-bottom: 2px solid black;
     padding: 10px;
-  }
-
-  .work1-3 :first-child {
-    border-bottom: none;
   }
 }
