@@ -62,27 +62,34 @@ h1 {
   margin: 0 auto;
 }
 
-.menu > div {
-  display: flex;
-  justify-content: space-between;
+.service {
+  width: 30%;
 }
-
 .service div {
   background-color: white;
 }
 .service h2 {
+  margin-bottom: 10px;
+  padding: 5px 10px;
   color: rgb(34, 199, 180);
   font-size: 18px;
   text-align: left;
+  border-left: solid rgb(34, 199, 180);
 }
 
-.service h3 {
-  color: rgb(34, 199, 180);
-  font-size: 18px;
-  text-align: left;
+.service_comment {
+  padding: 10px;
 }
-.service h4 {
-  color: rgb(34, 199, 180);
-  font-size: 18px;
-  text-align: left;
+
+@media screen and (max-width: 400px) {
+  .menu {
+    display: block;
+    padding: 0 10px;
+  }
+  .service {
+    width: 100%;
+  }
+  .servicev img {
+    width: 100%;
+  }
 }
