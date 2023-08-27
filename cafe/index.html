@@ -7,17 +7,48 @@
     <title>デザインカフェ</title>
     <meta name="description" content="デザインカフェのサイトです">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 
 <body>
 
-    <header>
+    <header id="header">
+        <script>
+            $(function () {
+
+                $('.sp_btn,.sp_nav li').on('click', function () {
+                    $('.sp_btn').toggleClass('open');
+                    $('.sp_nav').fadeToggle();
+                });
+            });
+
+        </script>
         <div class="header_slider">
-            <div><img src="images/pc_first-100.jpg" alt="店内の様子"></div>
+            <div>
+                <picture>
+                    <source srcset="images/sp_main_vs_2@2x-100.jpg" media="(max-width:767px)">
+                    <img src="images/pc_first-100.jpg" alt="店内の様子">
+                </picture>
+            </div>
         </div>
         <div class="header_wrap">
-            <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></h1>
+
+            <h1 class="header_logo">
+
+                <img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE">
+
+            </h1>
             <nav class="pc_nav">
+                <ul>
+                    <li><a href="#about_us">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn"><span></span></div>
+            <nav class="sp_nav">
                 <ul>
                     <li><a href="">ABOUT US</a></li>
                     <li><a href="">MENU</a></li>
@@ -26,6 +57,7 @@
                     <li><a href="">ACCESS</a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
@@ -44,9 +76,14 @@
             <div class="about_block">
                 <h2><img src="images/about_us@2x.png" alt="about_us"></h2>
                 <div class="about_img">
-                    <picture><img src="images/pc_about-100.jpg" alt="イメージ"></picture>
+                    <img src="images/pc_about-100.jpg" alt="イメージ">
                 </div>
-                <h3>私たちが提供する<br>こだわりのコーヒー</h3>
+
+                <div class="about_img_sp">
+                    <img src="images/about_us@2x-100.jpg" alt="イメージ">
+
+                </div>
+                <p class="coffee">私たちが提供する<br>こだわりのコーヒー</p>
                 <p>
                     サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
                 </p>
@@ -75,14 +112,19 @@
         </section>
 
         <section id="gallery" class="gallery">
-            <h2><img src="images/gallery@2x.png" alt=""></h2>
+            <h2><img src="images/gallery@2x.png" alt="gallery"></h2>
             <ul>
-                <li><img src="images/pc_gallary_01-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_02-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_03-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_04-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_05-100.jpg" alt=""></li>
+                <li><img src="images/pc_gallary_01-100.jpg" alt="ギャラリー"></li>
+                <li><img src="images/pc_gallary_02-100.jpg" alt="ギャラリー"></li>
+                <li><img src="images/pc_gallary_03-100.jpg" alt="ギャラリー"></li>
+                <li><img src="images/pc_gallary_04-100.jpg" alt="ギャラリー"></li>
+                <li><img src="images/pc_gallary_05-100.jpg" alt="ギャラリー"></li>
             </ul>
+            <div class="gallery_sp">
+                <img src="images/slider_2.jpg" alt="イメージ">
+
+            </div>
+
         </section>
 
         <section id="event" class="event">
@@ -91,12 +133,12 @@
                 <ul>
                     <li><time datetime="2020-06-23">2020.06.23</time><a href="6月">7月はイベント出店のため0/0日お休みします</a>
                     </li>
-                </ul>
-                <ul>
+
+
                     <li><time datetime="2020-03-15">2020.03.15</time><a href="3月">春の新商品発売。話題のあのブランドとコラボ</a>
                     </li>
-                </ul>
-                <ul>
+
+
                     <li><time datetime="2020-02-06">2020.02.06</time><a href="2月">コーヒーの日で30%OFFイベントを開催[3日間限定]</a>
                     </li>
                 </ul>
@@ -109,7 +151,7 @@
             <div class="access_map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.486162685276!2d127.71932267500148!3d26.245880488429854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56b87c585ccb9%3A0x6d45c4f09fd2ca63!2z5rWm5re75biC5b255omA!5e0!3m2!1sja!2sjp!4v1692153206195!5m2!1sja!2sjp"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
@@ -124,18 +166,17 @@
             </div>
 
             <div class="footer_copy">
-                <small>© 2021 DESIGN CAFE</small>
+                <p>© 2021 DESIGN CAFE</p>
             </div>
 
         </footer>
 
 
         <div class="page-top">
-            <img src="images/to_top@2x.png" alt="TOPへ">
+            <a href="#header"><img src="images/to_top@2x.png" alt="TOPへ"></a>
         </div>
 
-        </div>
-        </section>
+
 
     </main>
 </body>

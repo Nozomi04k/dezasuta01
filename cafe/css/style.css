@@ -24,6 +24,7 @@ footer {
   font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
     "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "MS Ｐ明朝",
     "MS 明朝", serif;
+  font-feature-settings: "palt";
 }
 
 a {
@@ -48,6 +49,9 @@ img {
   vertical-align: bottom;
   border: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* ここから課題４です。 */
 /* ヘッダー */
@@ -67,7 +71,7 @@ main {
   align-items: center;
   padding: 10px 7% 0 3%;
 }
-.header_rogo {
+.header_logo {
   width: 220px;
 }
 .pc_nav ul {
@@ -84,13 +88,99 @@ main {
   text-align: center;
 }
 
-/*  この部分が適応されません…。 */
-/* .section h2 { */
-/* height: 78px; */
-/* margin-bottom: 40px; */
-/* text-align: center; */
-/* } */
+/* スマホ版メニューは消す */
+.sp_nav,
+.sp_btn {
+  display: none;
+}
 
+@media screen and (max-width: 1000px) {
+  .pc_nav {
+    display: none;
+  }
+  /* ハンバーガー */
+  .sp_btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: block;
+    height: 23px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .sp_btn span {
+    position: relative;
+    top: 10px;
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  .sp_btn span::before,
+  .sp_btn span::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+  }
+  .sp_btn span::after {
+    top: 10px;
+  }
+  /* ハンバーガーメニュー閉じる */
+  .sp_btn.open span {
+    background: transparent;
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  /* ハンバーガーメニュー */
+  .sp_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+  .sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sp_nav ul li {
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  }
+}
+
+section h2 {
+  margin: 0 auto 40px;
+}
+
+section {
+  padding-top: 100px;
+}
 .top {
   display: block;
   text-align: center;
@@ -111,7 +201,6 @@ main {
 }
 
 .top p:last-child {
-  margin-bottom: 85px;
   font-size: 23px;
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -133,9 +222,8 @@ main {
   padding-left: 10px;
 }
 .about_block h2 {
-  margin-bottom: 48px;
+  margin: 0 auto 45px 0;
   padding-top: 56px;
-  text-align: right;
   width: 270px;
 }
 .about_block .about_img {
@@ -149,14 +237,18 @@ main {
   width: 100%;
   border-bottom-right-radius: 82px;
 }
-.about_block h3 {
+.about_block .coffee {
   font-size: 44px;
   margin-bottom: 22px;
   line-height: 1.3;
+  font-weight: normal;
 }
 .about_block p {
   font-size: 16px;
   line-height: 1.6;
+}
+.about_img_sp {
+  display: none;
 }
 
 .menu {
@@ -166,11 +258,9 @@ main {
   padding-right: 10px;
   padding-left: 10px;
 }
-/* sectionが効かないので個別で適応させようとしたのですが、align-itemsも適応されません。 */
+
 .menu h2 {
-  margin-bottom: 40px;
   width: 150px;
-  align-items: center;
 }
 .menu_block {
   display: flex;
@@ -192,13 +282,13 @@ main {
   padding-left: 15px;
   font-size: 38px;
   color: #d30202;
+  font-weight: normal;
 }
-/* menu h2と同じ値なのに小さくなってしまいます。 */
+.gallery_sp {
+  display: none;
+}
 .gallery h2 {
-  padding-top: 38px;
-  margin-bottom: 15px;
-  width: 150px;
-  align-items: center;
+  width: 245px;
 }
 .gallery ul {
   display: flex;
@@ -211,34 +301,32 @@ main {
   padding-left: 10px;
 }
 .event h2 {
-  padding-top: 57px;
-  margin-bottom: 33px;
-  width: 150px;
-  align-items: center;
+  width: 173px;
 }
 
 .event_block li {
   font-size: 23px;
 }
 .event_block {
-  /* flexをかけると乱れてしまいます。 */
-  /* かけないと、真ん中にはなるのですが段落が乱れます… */
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
   padding: 33px;
   border: 3px solid #4f260b;
   background: #ffff;
-  text-align: center;
 }
 
 .event_block ul li time {
   margin-right: 47px;
 }
+.event_block ul li + li {
+  margin-top: 20px;
+}
+.event_block ul li a {
+  text-decoration: underline;
+}
 
 .access h2 {
-  padding-top: 38px;
-  margin-bottom: 30px;
-  width: 150px;
-  align-items: center;
+  width: 213px;
 }
 .access_map iframe {
   display: block;
@@ -246,8 +334,8 @@ main {
   height: 470px;
 }
 
-/* footer反映されません…。 */
-.footer {
+footer {
+  background: #ffff;
   padding: 68px 0px;
 }
 
@@ -260,13 +348,15 @@ main {
   height: 50px;
   margin-right: 65px;
 }
-.footer p {
+.footer_block p {
   color: black;
   font-size: 20px;
   line-height: 1.9;
 }
 .footer_copy {
   text-align: center;
+  color: black;
+  font-size: 16px;
 }
 
 .page-top {
@@ -274,4 +364,194 @@ main {
   bottom: 40px;
   right: 30px;
   width: 125px;
+}
+
+/* 課題５ */
+
+@media screen and (max-width: 767px) {
+  .top {
+    padding: 40px 0 0;
+    text-align: center;
+  }
+  .top p:first-child {
+    margin-bottom: 22px;
+    font-size: 17px;
+  }
+  .top p:nth-child(2) {
+    margin-bottom: 15px;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+  .top p:last-child {
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+  }
+  section {
+    padding-top: 40px;
+  }
+  section h2 {
+    margin: 0 auto 15px;
+  }
+  .about_img {
+    display: none;
+  }
+  .about_block h2 {
+    width: 160px;
+    margin: 0 auto 12px;
+  }
+  .about_us {
+    display: block;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .about_block {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .about_block h2 {
+    margin: 0 auto 12px;
+    width: 160px;
+  }
+  .about_img_sp {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .about_block .about_img img {
+    width: 100%;
+    border-bottom-right-radius: 82px;
+  }
+  .about_block .coffee {
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    line-height: 1.25;
+  }
+  .about_block p {
+    padding: 0 20px;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  /* menu、調べたりお手本を見たりとCSSいじったのですが、うまく真ん中配置と画像サイズが変わらずです… */
+  .menu {
+    padding-right: 38px;
+    padding-left: 38px;
+  }
+
+  .menu h2 {
+    width: 87px;
+  }
+  .menu_block {
+    display: block;
+  }
+  .menu_block .menu_item {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .menu_item h3 {
+    margin-bottom: 10px;
+    font-size: 40px;
+  }
+  .menu_item p {
+    font-size: 17px;
+    line-height: 1.58;
+  }
+  /* ギャラリーの画像を大きいもののイメージに変えたのですが、
+  お手本はそのままの画像を一つだけ表示にしているのでしょうか。 */
+  .gallery h2 {
+    width: 142px;
+  }
+  .gallery ul {
+    display: none;
+  }
+  .gallery_sp {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+  /* ブロック内がうまくいっていません。
+  原因がわかりそうだったのですが、時間がかかりすぎたので申し訳ないですがそのままです…
+  もう少し検証してみます。 */
+  .event {
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .event h2 {
+    width: 100px;
+  }
+
+  .event_block li {
+    width: 100%;
+    font-size: 16px;
+  }
+  .event_block ul li {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .event_block {
+    padding: 20px 28px;
+    font-size: 16px;
+  }
+
+  .event_block ul li time {
+    margin-right: 47px;
+  }
+  .event_block ul li + li {
+    margin-top: 20px;
+  }
+  .event_block ul li a {
+    width: 100%;
+    line-height: 1.4;
+  }
+  .access h2 {
+    width: 124px;
+  }
+  .access_map iframe {
+    width: 100%;
+    height: 190px;
+  }
+  footer {
+    padding: 40px 20px 32px;
+  }
+
+  .footer_block {
+    display: block;
+    margin-bottom: 36px;
+  }
+  .footer_block .footer_img img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  .footer_block p {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .page-top {
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+  }
+}
+
+/* フォントサイズ調整 */
+@media screen and (max-width: 1100px) {
+  .top p:nth-child(2) {
+    font-size: 70px;
+  }
+
+  .top p:last-child {
+    font-size: 15px;
+  }
+  .about_block .coffee {
+    font-size: 28px;
+  }
 }
