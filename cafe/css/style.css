@@ -87,6 +87,19 @@ main {
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   text-align: center;
 }
+/* スライダー調整*/
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+  color: #fff;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
 
 /* スマホ版メニューは消す */
 .sp_nav,
@@ -94,7 +107,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .pc_nav {
     display: none;
   }
@@ -284,13 +297,18 @@ section {
   color: #d30202;
   font-weight: normal;
 }
+.menu_item p {
+  font-size: 17px;
+  line-height: 1.47;
+  text-align: justify;
+}
 .gallery_sp {
   display: none;
 }
 .gallery h2 {
   width: 245px;
 }
-.gallery ul {
+.gallery .gallery_slider ul {
   display: flex;
 }
 
@@ -366,9 +384,26 @@ footer {
   width: 125px;
 }
 
+/* フォントサイズ調整 */
+@media screen and (max-width: 1100px) {
+  .top p:nth-child(2) {
+    font-size: 70px;
+  }
+
+  .top p:last-child {
+    font-size: 15px;
+  }
+  .about_block .coffee {
+    font-size: 28px;
+  }
+}
+
 /* 課題５ */
 
 @media screen and (max-width: 767px) {
+  .header_logo {
+    width: 187px;
+  }
   .top {
     padding: 40px 0 0;
     text-align: center;
@@ -436,7 +471,7 @@ footer {
     line-height: 1.75;
     text-align: justify;
   }
-  /* menu、調べたりお手本を見たりとCSSいじったのですが、うまく真ん中配置と画像サイズが変わらずです… */
+
   .menu {
     padding-right: 38px;
     padding-left: 38px;
@@ -451,6 +486,9 @@ footer {
   .menu_block .menu_item {
     width: 100%;
     margin-bottom: 60px;
+  }
+  .menu_block .menu_item img {
+    width: 100%;
   }
 
   .menu_item h3 {
@@ -474,9 +512,6 @@ footer {
     display: block;
     margin-bottom: 30px;
   }
-  /* ブロック内がうまくいっていません。
-  原因がわかりそうだったのですが、時間がかかりすぎたので申し訳ないですがそのままです…
-  もう少し検証してみます。 */
   .event {
     padding-top: 40px;
     padding-right: 20px;
@@ -496,6 +531,7 @@ footer {
     margin-left: 0;
   }
   .event_block {
+    display: block;
     padding: 20px 28px;
     font-size: 16px;
   }
@@ -509,6 +545,9 @@ footer {
   .event_block ul li a {
     width: 100%;
     line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .access h2 {
     width: 124px;
@@ -539,19 +578,5 @@ footer {
     bottom: 20px;
     right: 20px;
     width: 100px;
-  }
-}
-
-/* フォントサイズ調整 */
-@media screen and (max-width: 1100px) {
-  .top p:nth-child(2) {
-    font-size: 70px;
-  }
-
-  .top p:last-child {
-    font-size: 15px;
-  }
-  .about_block .coffee {
-    font-size: 28px;
   }
 }
