@@ -101,9 +101,68 @@ main {
   margin-bottom: 0;
 }
 
+/* ギャラリースライダー*/
+.gallery_slider .slick-arrow {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0;
+  width: 20px;
+  height: 38px;
+  color: transparent;
+  z-index: 3;
+  transition: opacity 0.5s;
+  z-index: 3;
+}
+.slick-arrow:hover {
+  opacity: 0.7;
+}
+
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  margin: auto;
+  content: "";
+  vertical-align: middle;
+}
+.slick-next::after,
+.slick-prev::after {
+  width: 17px;
+  height: 17px;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+}
+
+.slick-next {
+  right: 26px;
+}
+
+.slick-next::after {
+  right: 50%;
+  transform: rotate(45deg);
+}
+
+.slick-prev {
+  left: 26px;
+}
+.slick-prev::after {
+  left: 50%;
+  transform: rotate(-135deg);
+}
+
 /* スマホ版メニューは消す */
 .sp_nav,
 .sp_btn {
+  display: none;
+}
+
+.sp_only {
   display: none;
 }
 
@@ -111,6 +170,7 @@ main {
   .pc_nav {
     display: none;
   }
+
   /* ハンバーガー */
   .sp_btn {
     position: absolute;
@@ -308,7 +368,7 @@ section {
 .gallery h2 {
   width: 245px;
 }
-.gallery .gallery_slider ul {
+.gallery .gallery_slider {
   display: flex;
 }
 
@@ -423,6 +483,9 @@ footer {
     line-height: 1.8;
     letter-spacing: 0.1em;
   }
+  .sp_only {
+    display: block;
+  }
   section {
     padding-top: 40px;
   }
@@ -499,18 +562,34 @@ footer {
     font-size: 17px;
     line-height: 1.58;
   }
-  /* ギャラリーの画像を大きいもののイメージに変えたのですが、
-  お手本はそのままの画像を一つだけ表示にしているのでしょうか。 */
+
   .gallery h2 {
     width: 142px;
   }
-  .gallery ul {
-    display: none;
+  .gallery_slider {
+    display: flex;
   }
   .gallery_sp {
     width: 100%;
     display: block;
     margin-bottom: 30px;
+  }
+  .slick-slide img {
+    width: 100%;
+  }
+  .slick-next::after,
+  .slick-prev::after {
+    width: 10px;
+    height: 10px;
+  }
+  .slick-next {
+    right: 8px;
+  }
+  .slick-prev {
+    left: 8px;
+  }
+  .slick-next::after {
+    right: 2px;
   }
   .event {
     padding-top: 40px;

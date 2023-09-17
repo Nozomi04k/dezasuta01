@@ -69,8 +69,8 @@
 
             <p>ハッピーに溢れる1日を<br>1杯のコーヒーから。</p>
             <p>
-                毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>
-                足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。
+                毎日を丁寧に大切に過ごしたい。<br class="sp_only">だからこそ一杯一杯丁寧にコーヒーを入れ<br>
+                足を運んでくれるお客さんには落ち着く空間と<br class="sp_only">こだわりのコーヒーを提供したい。
             </p>
         </div>
 
@@ -115,21 +115,17 @@
 
         <section id="gallery" class="gallery">
             <h2><img src="images/gallery@2x.png" alt="gallery"></h2>
-            <!-- <div class="gallery_slider"> -->
-            <ul class="gallery_slider">
-                <li><img src="images/pc_gallary_01-100.jpg" alt="ギャラリー"></li>
-                <li><img src="images/pc_gallary_02-100.jpg" alt="ギャラリー"></li>
-                <li><img src="images/pc_gallary_03-100.jpg" alt="ギャラリー"></li>
-                <li><img src="images/pc_gallary_04-100.jpg" alt="ギャラリー"></li>
-                <li><img src="images/pc_gallary_05-100.jpg" alt="ギャラリー"></li>
-                <li><img src="images/pc_gallary_01-100.jpg" alt="ギャラリー"></li>
-            </ul>
-            <!-- </div> -->
 
-            <div class="gallery_sp">
-                <img src="images/pc_gallary_05-100.jpg" alt="イメージ">
-
+            <div class="gallery_slider">
+                <div><img src="images/pc_gallary_01-100.jpg" alt="ギャラリー"></div>
+                <div><img src="images/pc_gallary_02-100.jpg" alt="ギャラリー"></div>
+                <div><img src="images/pc_gallary_03-100.jpg" alt="ギャラリー"></div>
+                <div><img src="images/pc_gallary_04-100.jpg" alt="ギャラリー"></div>
+                <div><img src="images/pc_gallary_05-100.jpg" alt="ギャラリー"></div>
+                <div><img src="images/pc_gallary_01-100.jpg" alt="ギャラリー"></div>
             </div>
+
+
 
         </section>
 
@@ -203,17 +199,23 @@
             $('.gallery_slider').slick({
                 autoplay: false,
                 dots: false,
-                arrows: false,
+                arrows: true,
                 Infinity: true,
-                // これをいれると画像が小さくなってしまいます。
                 slidesToShow: 5,
                 slidesToScroll: 5,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+
+                        }
+                    },
+                ]
             });
-        })
 
-
-
-
+        });
 
 
 
