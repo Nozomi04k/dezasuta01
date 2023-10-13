@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="jn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ナナイチデザイン</title>
+    <meta name="description" content="ポートフォリオサイトです">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <main>
+
+        <div class="wrapper">
+
+            <header>
+
+                <div id="loading">
+                    <div class="sk-fading-circle">
+                        <div class="sk-circle1 sk-circle"></div>
+                        <div class="sk-circle2 sk-circle"></div>
+                        <div class="sk-circle3 sk-circle"></div>
+                        <div class="sk-circle4 sk-circle"></div>
+                        <div class="sk-circle5 sk-circle"></div>
+                        <div class="sk-circle6 sk-circle"></div>
+                        <div class="sk-circle7 sk-circle"></div>
+                    </div>
+                </div>
+
+
+                <div class="header_wrap">
+                    <nav class="pc_nav">
+                        <ul>
+                            <li><a href="#about_us">CONCEPT</a></li>
+                            <li><a href="#menu">ABOUT</a></li>
+                            <li><a href="#gallery">SKILL</a></li>
+                            <li><a href="#event">WORKS</a></li>
+                            <li><a href="#access">CONTACT</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <section class="section fv">
+                <h1><img src="images/Title.png" alt="ナナイチデザイン"></h1>
+                <!-- <p>横スクロールするセクションはsectionタグで囲い、サイト全体を.wrapperで囲います。</p> -->
+
+
+                <div class="scrolldown"><span>Scroll</span></div>
+
+
+            </section>
+
+            <section class="section concept">
+                <p>太陽の光が海に差し込むと、<br>
+                    七色の光が一色だけ残り、<br>
+                    わたしたちの目に青く映ります。<br>
+                    目に映る色は青いけれど、もとは七色の光。</p>
+                <p>あなたの色んな思いを、ひとつのデザインにする<br>
+                    お手伝いをさせてください。</p>
+                <p>七色から一色へ。<br>
+                    「ナナイチデザイン」</p>
+            </section>
+
+            <section class="section about">
+                <p>Nozomi</p>
+                <p>初めまして、Nozomiです。<br>
+                    気づけば青が好きで、青に彩られた人生を歩んでいます。<br>
+                    石川県で生まれ、沖縄県で育ち、現在長崎県在住と、海にも縁のある場所で過ごしてきました。<br>
+                    これから関わるみなさまに、いろどりを添えられるようなデザイナーを目指しますので、よろしくお願いします。<br>
+
+                </p>
+            </section>
+            <section class="section skill">
+                <p>Skill</p>
+            </section>
+
+            <section class="section works">
+                <p>Works</p>
+            </section>
+
+            <section class="section contact">
+                <p>Mail</p>
+            </section>
+        </div>
+    </main>
+    <script>
+        $(function () {
+            // マウスホイールを横スクロールにする
+            const scrollElement = document.querySelector(".wrapper");
+
+            scrollElement.addEventListener("wheel", (e) => {
+                if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+
+                const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+
+                if (
+                    (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+                    (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+                )
+                    return;
+
+                e.preventDefault();
+                scrollElement.scrollLeft += e.deltaY;
+            });
+        });
+    </script>
+</body>
+
+</html>
