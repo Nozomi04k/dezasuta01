@@ -1,49 +1,5 @@
 @charset "utf-8";
 
-/* cssリセット */
-
-/*利用するタグによってこちらの内容は増やす*/
-
-html,
-body,
-h1,
-h2,
-h3,
-p,
-dl,
-dt,
-dd,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  /*デフォルトの文字色、font-familyを予め当てておく*/
-  color: white;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-}
-
-a {
-  /*下線を消す*/
-  text-decoration: none;
-  /*色を消す*/
-  color: inherit;
-}
-
-ul {
-  /*左の「・」を消す*/
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-  border: none;
-}
-
-/* ここからポートフォリオ*/
-
 .loading {
   margin: 100px auto;
   font-size: 25px;
@@ -205,36 +161,18 @@ img {
 }
 
 /* 各ページレイアウト */
-main {
-  background: #c5eeff;
-}
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: scroll; /* 画面幅からはみだした場合に横スクロールにする */
-}
 
-.header_wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
+.header-wrap {
+  position: relative;
+  top: 5px;
+  left: 990px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 7% 0 3%;
-}
-/* 横スクロールバーのデザイン */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-::-webkit-scrollbar-track {
-  background-color: #ccc;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #17585d;
+  flex-direction: row-reverse;
 }
 
 .scrolldown {
@@ -242,16 +180,13 @@ body {
   /* border: 1px solid #333; */
   /* padding: 10px; */
   display: inline-block;
-  background: #f2f2f2;
-  position: relative;
+  position: absolute;
+  right: 100px;
+  bottom: 330px;
 }
 
 /*Scrollテキストの描写*/
 .scrolldown span {
-  /*描画位置*/
-  position: fixed;
-  right: 100px;
-  bottom: 330px;
   /*テキストの形状*/
   color: #eee;
   font-size: 17px;
@@ -266,8 +201,8 @@ body {
 .scrolldown:before {
   content: "";
   /*描画位置*/
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  bottom: 2px;
   right: 10px;
   /*丸の形状*/
   width: 10px;
@@ -282,10 +217,10 @@ body {
 /*下からの距離が変化して丸の全体が上から下に動く*/
 @keyframes circlemove {
   0% {
-    bottom: 45px;
+    right: -17px;
   }
   100% {
-    bottom: -5px;
+    right: -60px;
   }
 }
 
@@ -310,13 +245,13 @@ body {
 .scrolldown:after {
   content: "";
   display: block;
-  width: 2px;
-  height: 50px;
+  width: 50px;
+  height: 2px;
   background: white;
   position: absolute;
   bottom: 6px;
-  left: 0;
-  right: 0;
+  left: 60px;
+
   margin: auto;
   transition: 0.3s;
   /* content: ""; */
@@ -338,11 +273,50 @@ body {
 
 .section {
   /* セクションを全画面表示 */
+  position: relative;
   width: 100vw;
   min-width: 100vw;
   height: 100vh;
 }
 
+.load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c5eeff;
+  background-image: url(../images/pc1.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+.keyvisual {
+  position: relative;
+}
+
+.keyvisual_scroll {
+  width: 8vw;
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+}
+
+/* .keyvisual_scroll {
+  height: auto;
+  width: 100%;
+  animation: rotate 15s linear infinite;
+} */
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* ここから各セクションの記述（適宜変更ください） */
 
 .fv {
@@ -350,18 +324,139 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(../images/pc1.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.header-nav ul {
+  display: flex;
+  position: absolute;
+}
+.header-nav ul li {
+  /* width: 105px; */
+  padding-top: 35px;
+  margin-right: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
 }
 
+/* コンセプト */
 .concept {
-  display: block;
-  justify-content: center;
-  align-items: center;
-
-  color: #fff;
-}
-
-.about {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  background-image: url(../images/pc2.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.section-inner {
+  margin: 0 auto;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 200px 100px 200px 100px;
+  border-radius: 50%;
+  color: #000;
+}
+
+h2 {
+  position: absolute;
+  top: 170px;
+  left: 10%;
+  font-size: 17px;
+  color: #fff;
+  font-family: "ab-tombo-bold";
+  writing-mode: vertical-rl;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 2px;
+  height: 390px;
+  margin: auto;
+  background-color: white;
+}
+
+/* アバウト */
+.about {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/pc3.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.about-me p:first-child {
+  text-align: left;
+  margin: 260px 0px 0px 570px;
+  font-size: 23px;
+  font-family: "ab-tombo-bold";
+}
+.about-me p:nth-child(2) {
+  text-align: left;
+  margin: 10px 0px 260px 570px;
+  letter-spacing: 0.1em;
+  line-height: 25px;
+  font-size: 16px;
+}
+
+/* スキル */
+.skill {
+  display: block;
+  justify-content: center;
+  background-image: url(../images/pc4.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.skill-inner {
+  text-align: center;
+  margin: 140px auto;
+  max-width: 710px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 65px 52px 65px 52px;
+  border-radius: 65px;
+  color: #000;
+}
+.skill-inner ul {
+  display: flex;
+  justify-content: center;
+}
+.skill-inner p {
+  text-align: left;
+  padding: 0px 60px;
+}
+
+/* ワークス */
+.works {
+  background-image: url(../images/pc5.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.works-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .works-inner .works-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* コンタクト */
+.contact {
+  display: block;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url(../images/pc6.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
