@@ -12,21 +12,9 @@
   min-width: 100vw;
   height: 100vh;
 }
-/* .wrapper {
-  position: relative;
-  top: 5px;
-  left: 990px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 7% 0 3%;
-  flex-direction: row-reverse;
-/* } */
 main {
   background: #c5eeff;
-  background-image: url(../images/pc6.png);
+  background-image: url(../images/pc4.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -48,4 +36,24 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #17585d;
+}
+h2 {
+  position: absolute;
+  top: 170px;
+  left: 10%;
+  font-size: 17px;
+  color: #fff;
+  font-family: "ab-tombo-bold";
+  writing-mode: vertical-rl;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 2px;
+  height: 390px;
+  margin: auto;
+  background-color: white;
 }
