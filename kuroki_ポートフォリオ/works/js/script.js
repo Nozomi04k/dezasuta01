@@ -9,7 +9,7 @@
 
 $(function () {
     // マウスホイールを横スクロールにする
-    const scrollElement = document.querySelector(".wrapper");
+    const scrollElement = document.querySelector("main");
 
     scrollElement.addEventListener("wheel", (e) => {
         if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;

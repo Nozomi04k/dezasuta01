@@ -358,6 +358,9 @@ main {
   padding: 0 20px;
   color: #fff;
 }
+h1 img {
+  width: 80%;
+}
 /* コンセプト */
 .concept {
   display: flex;
@@ -369,18 +372,80 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
-.section-inner {
+/* .section-inner {
   margin: 0 auto;
   max-width: 1000px;
   background: rgba(255, 255, 255, 0.5);
   padding: 200px 100px 200px 100px;
   border-radius: 50%;
   color: #000;
+} */
+.circle_width {
+  /* 表示したい横幅を決める */
+  width: 35%;
+
+  /* 線をつける */
+  /* border: 3px solid #333;
+    */
+  /* 要素の角をなくす */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.concept .section-inner p {
+.circle_height {
+  position: relative;
+
+  /* paddingの％指定は親要素の横幅に依存する
+  padding-top: 100%にすることで親要素の横幅と同じ長さになる
+  親要素が正方形になる */
+  padding-top: 100%;
+
+  /* 要素自体の高さがあるとずれるので高さを０にする */
+  height: 0;
+}
+
+.circle_height p:first-child {
+  position: absolute;
+
+  /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
+  top: calc((45% - 1em) / 2);
+  left: 0;
+  right: 0;
+
+  /* pタグ初期値のmarginを無効に */
+  margin: 0;
   text-align: center;
+  line-height: 25px;
+  font-size: 15px;
+}
+.circle_height p:nth-child(2) {
+  position: absolute;
+
+  top: calc((103% - 1em) / 2);
+
+  left: 0;
+  right: 0;
+
+  /* pタグ初期値のmarginを無効に */
+  margin: 0;
+  text-align: center;
+  font-weight: medium;
+  font-size: 18px;
+  line-height: 25px;
+}
+.circle_height p:last-child {
+  position: absolute;
+
+  /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
+  top: calc((145% - 1em) / 2);
+  left: 0;
+  right: 0;
+
+  /* pタグ初期値のmarginを無効に */
+  margin: 0;
+  text-align: center;
+  line-height: 25px;
+  font-size: 15px;
 }
 
 h2 {
@@ -392,7 +457,6 @@ h2 {
   font-family: "ab-tombo-bold";
   writing-mode: vertical-rl;
 }
-
 h2::after {
   content: "";
   position: absolute;
@@ -406,7 +470,7 @@ h2::after {
 
 /* アバウト */
 .about {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(../images/pc3.webp);
@@ -414,24 +478,34 @@ h2::after {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
-.about-me p:first-child {
+.about-me {
+  width: 32%;
+}
+.name-box {
+  position: relative;
+}
+.about-me .name-box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-250%, -70%);
   text-align: left;
-  margin: 260px 0px 0px 570px;
   font-size: 23px;
   font-family: "ab-tombo-bold";
 }
-.about-me p:nth-child(2) {
+.about-me p {
   text-align: left;
-  margin: 10px 0px 260px 570px;
   letter-spacing: 0.1em;
   line-height: 25px;
   font-size: 16px;
 }
+.about a img {
+  display: block;
+}
 
 /* スキル */
 .skill {
-  display: block;
+  display: flex;
   justify-content: center;
   background-image: url(../images/pc4.webp);
   background-position: center;
@@ -440,21 +514,36 @@ h2::after {
 }
 .skill-inner {
   text-align: center;
-  margin: 140px auto;
-  max-width: 710px;
+  /* margin: 140px auto; */
+  width: 50%;
   background: rgba(255, 255, 255, 0.5);
-  padding: 65px 52px 65px 52px;
+  /* padding: 65px 52px 65px 52px; */
   border-radius: 65px;
   color: #000;
 }
-.skill-inner ul {
-  display: flex;
-  justify-content: center;
+.skill-height {
+  position: relative;
+  padding-top: 25%;
+  height: 0;
 }
-.skill-inner p {
-  text-align: left;
-  padding: 0px 60px;
+.skill-inner {
+  /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
+  top: calc((45% - 1em) / 2);
+  left: 0;
+  right: 0;
+
+  text-align: center;
+  line-height: 25px;
+  font-size: 15px;
 }
+/* .skill-inner ul { */
+/* display: flex; */
+/* justify-content: center; */
+/* } */
+/* .skill-inner p { */
+/* text-align: left; */
+/* padding: 0px 60px; */
+/* } */
 
 /* ワークス */
 .works {
@@ -469,11 +558,10 @@ h2::after {
   justify-content: center;
   align-items: center;
 }
-/* .works-inner .works-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.works-image {
+  margin: 212px 0px;
+  top: calc(50% -26vw);
+}
 
 /* コンタクト */
 .contact {
@@ -485,4 +573,147 @@ h2::after {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.Form {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+@media screen and (max-width: 480px) {
+  .Form {
+    margin-top: 40px;
+  }
+}
+.Form-Item {
+  /* border-top: 1px solid #ddd; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+}
+.Form-Item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label.isMsg {
+    margin-top: 0;
+  }
+}
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #5bc8ac;
+  color: #fff;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label-Required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 30px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Btn {
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #5bc8ac;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Btn {
+    margin-top: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    font-size: 16px;
+  }
 }
