@@ -482,7 +482,7 @@ h2::after {
   background-repeat: no-repeat;
 }
 .about-me {
-  width: 32%;
+  width: 34%;
 }
 .name-box {
   position: relative;
@@ -565,46 +565,59 @@ h2::after {
   margin: 212px 0px;
   top: calc(50% -26vw);
 } */
-.works-slider img {
-  width: 250px;
+.works-slider .slick-arrow {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0;
+  width: 20px;
+  height: 38px;
+  color: transparent;
+  z-index: 3;
+  transition: opacity 0.5s;
+  z-index: 3;
 }
-.slick-prev:before,
-.slick-next:before {
-  color: #000 !important;
-}
-
-.slider p {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 100px;
-  color: #666;
-  margin: 10px;
-  text-align: center;
-  background-color: #e0e0e0;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
+.slick-arrow:hover {
+  opacity: 0.7;
 }
 
-.buttons .button {
-  margin: 8px;
-  border: 1px solid #000;
-  color: #000;
-  padding: 8px;
-  text-align: center;
-  width: 8em;
-  transition: all 300ms ease;
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  margin: auto;
+  content: "";
+  vertical-align: middle;
+}
+.slick-next::after,
+.slick-prev::after {
+  width: 17px;
+  height: 17px;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
 }
 
-.buttons .button:hover {
-  cursor: pointer;
-  background-color: #000;
-  color: #fff;
-  transition: all 300ms ease;
+.slick-next {
+  right: 26px;
 }
 
+.slick-next::after {
+  right: 50%;
+  transform: rotate(45deg);
+}
+
+.slick-prev {
+  left: 26px;
+}
+.slick-prev::after {
+  left: 50%;
+  transform: rotate(-135deg);
+}
 /* コンタクト */
 .contact {
   display: block;
