@@ -25,4 +25,43 @@ $(function () {
         e.preventDefault();
         scrollElement.scrollLeft += e.deltaY;
     });
+
+
+        // $('.works-slider').slick({
+        //   slidesToScroll: 1,
+        //   slidesToShow: 3,
+        // });
+        // var slidesToScroll = 1;
+        // $('.js-setoption').on('click', function() {
+        //   if (slidesToScroll === 1) {
+        //     $(this).text('1つに戻す');
+        //     slidesToScroll = 3;
+        //   } else {
+        //     $(this).text('3つにする');
+        //     slidesToScroll = 1;
+        //   }
+        //   $('.slider').slick('slickSetOption', {
+        //     slidesToScroll: slidesToScroll,
+        //   });
+        // });
+    
+      
+    $('.works-slider').slick({
+        autoplay: false,
+        dots: false,
+        arrows: true,
+        Infinity: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+
+                }
+            },
+        ]
+    });
 });

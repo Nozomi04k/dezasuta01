@@ -25,4 +25,23 @@ $(function () {
         e.preventDefault();
         scrollElement.scrollLeft += e.deltaY;
     });
+
+    // $('.works-slider').slick({
+    //     autoplay: false,
+    //     dots: false,
+    //     arrows: true,
+    //     Infinity: true,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 3,
+    //     responsive: [
+    //         {
+    //             breakpoint: 768,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1,
+
+    //             }
+    //         },
+    //     ]
+    // });
 });

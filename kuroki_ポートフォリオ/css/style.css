@@ -181,7 +181,7 @@
   /* padding: 10px; */
   display: inline-block;
   position: absolute;
-  right: 100px;
+  right: 135px;
   bottom: 330px;
 }
 
@@ -264,6 +264,9 @@
   /* height: 50px; */
   /* background: #eee; */
 }
+.keyvisual .keyvisual_scroll img {
+  float: right;
+}
 
 main {
   /* すべてのコンテンツをこの要素に入れる */
@@ -299,10 +302,10 @@ main {
 }
 
 .keyvisual_scroll {
-  width: 8vw;
+  width: 10vw;
   position: absolute;
-  bottom: 2vw;
-  left: 2vw;
+  bottom: 37%;
+  right: -5%;
 }
 
 /* .keyvisual_scroll {
@@ -327,7 +330,7 @@ main {
   align-items: center;
   background-image: url(../images/pc1.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .header-nav ul {
@@ -344,7 +347,7 @@ main {
 }
 .fv-header {
   position: absolute;
-  top: calc(50% -26vw);
+  top: calc(50% - 20vw);
   transform: translateY(-50%);
   right: 0;
   width: 100%;
@@ -369,7 +372,7 @@ h1 img {
   color: #fff;
   background-image: url(../images/pc2.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 /* .section-inner {
@@ -475,7 +478,7 @@ h2::after {
   align-items: center;
   background-image: url(../images/pc3.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .about-me {
@@ -509,7 +512,7 @@ h2::after {
   justify-content: center;
   background-image: url(../images/pc4.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .skill-inner {
@@ -549,7 +552,7 @@ h2::after {
 .works {
   background-image: url(../images/pc5.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
@@ -558,9 +561,48 @@ h2::after {
   justify-content: center;
   align-items: center;
 }
-.works-image {
+/* .works-image {
   margin: 212px 0px;
   top: calc(50% -26vw);
+} */
+.works-slider img {
+  width: 250px;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #000 !important;
+}
+
+.slider p {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 100px;
+  color: #666;
+  margin: 10px;
+  text-align: center;
+  background-color: #e0e0e0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons .button {
+  margin: 8px;
+  border: 1px solid #000;
+  color: #000;
+  padding: 8px;
+  text-align: center;
+  width: 8em;
+  transition: all 300ms ease;
+}
+
+.buttons .button:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  transition: all 300ms ease;
 }
 
 /* コンタクト */
@@ -571,7 +613,7 @@ h2::after {
 
   background-image: url(../images/pc6.webp);
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .Form {
