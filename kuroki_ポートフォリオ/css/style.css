@@ -346,11 +346,12 @@ main {
   font-size: 18px;
 }
 .fv-header {
-  position: absolute;
+  position: fixed;
   top: calc(50% - 20vw);
   transform: translateY(-50%);
   right: 0;
   width: 100%;
+  z-index: 99;
 }
 .fv-nav ul {
   display: flex;
@@ -418,8 +419,8 @@ h1 img {
   /* pタグ初期値のmarginを無効に */
   margin: 0;
   text-align: center;
-  line-height: 25px;
-  font-size: 15px;
+  line-height: 1.6;
+  font-size: 1vw;
 }
 .circle_height p:nth-child(2) {
   position: absolute;
@@ -433,8 +434,8 @@ h1 img {
   margin: 0;
   text-align: center;
   font-weight: medium;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 1.2vw;
+  line-height: 1.6;
 }
 .circle_height p:last-child {
   position: absolute;
@@ -447,8 +448,8 @@ h1 img {
   /* pタグ初期値のmarginを無効に */
   margin: 0;
   text-align: center;
-  line-height: 25px;
-  font-size: 15px;
+  line-height: 1.6;
+  font-size: 1vw;
 }
 
 h2 {
@@ -560,11 +561,18 @@ h2::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 /* .works-image {
   margin: 212px 0px;
   top: calc(50% -26vw);
 } */
+.works-slider {
+  width: 80%;
+}
+.works-slider img {
+  width: 100px;
+}
 .works-slider .slick-arrow {
   display: block;
   position: absolute;
