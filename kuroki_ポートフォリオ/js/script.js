@@ -45,26 +45,26 @@ $(function () {
         ]
     });
 
-    $(function () {
-        var webStorage = function () {
-          if (sessionStorage.getItem('access')) {
-            /*
-              2回目以降アクセス時の処理
-            */
-            $(".load").addClass('is-active');
-          } else {
-            /*
-              初回アクセス時の処理
-            */
-            sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
-            $(".circle").addClass('is-active'); // loadingアニメーションを表示
-            setTimeout(function () {
-              // ローディングを数秒後に非表示にする
-              $(".load").addClass('is-active');
-              $(".circle").removeClass('is-active');
-            }, 3000); // ローディングを表示する時間
-          }
-        }
-        webStorage();
-    });      
+    // $(function () {
+    //     var webStorage = function () {
+    //       if (sessionStorage.getItem('access')) {
+    //         /*
+    //           2回目以降アクセス時の処理
+    //         */
+    //         $(".load").addClass('is-active');
+    //       } else {
+    //         /*
+    //           初回アクセス時の処理
+    //         */
+    //         sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
+    //         $(".loading").addClass('is-active'); // loadingアニメーションを表示
+    //         setTimeout(function () {
+    //           // ローディングを数秒後に非表示にする
+    //           $(".load").addClass('is-active');
+    //           $(".loading").removeClass('is-active');
+    //         }, 3000); // ローディングを表示する時間
+    //       }
+    //     }
+    //     webStorage();
+    //   });
 });

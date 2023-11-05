@@ -190,11 +190,10 @@
   visibility: hidden;
 }
 
-.loading-animation {
+.loading {
   width: 100vw;
   height: 100vh;
   transition: all 1s;
-  background-color: #20a3ea;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -203,10 +202,11 @@
   visibility: hidden;
 }
 
-.loading-animation.is-active {
+.loading .is-active {
   opacity: 1;
   visibility: visible;
 }
+
 /* 各ページレイアウト */
 
 .header-wrap {
@@ -347,6 +347,18 @@ main {
 .keyvisual {
   position: relative;
 }
+.keyvisual_scroll img {
+  animation: rotation 15s linear infinite;
+}
+/* アニメーション */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .keyvisual_scroll {
   width: 10vw;
@@ -418,7 +430,7 @@ h1 img {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-image: url(../images/pc2.webp);
+  background-image: url(../images/pc\(2\).webp);
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
