@@ -482,35 +482,42 @@ h2::after {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-.about-me {
-  width: 34%;
+.about-inner {
+  width: 37%;
+  margin-left: 11%;
 }
+
 .name-box {
   position: relative;
+  margin-bottom: 10px;
 }
 .about-me .name-box p {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-250%, -70%);
-  text-align: left;
-  font-size: 23px;
+  top: -14px;
+  left: 0;
+  font-size: 1.5vw;
   font-family: "ab-tombo-bold";
 }
 .about-me p {
   text-align: left;
-  letter-spacing: 0.1em;
-  line-height: 25px;
-  font-size: 16px;
+  font-feature-settings: "palt";
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  font-size: 1vw;
 }
-.about a img {
+
+.about-link {
   display: block;
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 80px;
 }
 
 /* スキル */
 .skill {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-image: url(../images/pc4.webp);
   background-position: center;
   background-size: 100% auto;
@@ -527,8 +534,7 @@ h2::after {
 }
 .skill-height {
   position: relative;
-  padding-top: 25%;
-  height: 0;
+  padding: 60px;
 }
 .skill-inner {
   /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
@@ -568,10 +574,21 @@ h2::after {
   top: calc(50% -26vw);
 } */
 .works-slider {
-  width: 80%;
+  width: 70%;
 }
-.works-slider img {
-  width: 100px;
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .works-slider .slick-arrow {
   display: block;
@@ -631,7 +648,7 @@ h2::after {
   display: block;
   justify-content: center;
   text-align: center;
-
+  align-items: center;
   background-image: url(../images/pc6.webp);
   background-position: center;
   background-size: 100% auto;
