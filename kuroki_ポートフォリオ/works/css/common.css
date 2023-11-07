@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  /*デフォルトの文字色、font-familyを予め当てておく*/
+  color: #0c68d2;
+  font-family: "irohamaru", "ab-tombo-bold", "游ゴシック体", YuGothic,
+    "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", sans-serif;
+}
+
+a {
+  /*下線を消す*/
+  text-decoration: none;
+  /*色を消す*/
+  color: inherit;
+}
+
+ul {
+  /*左の「・」を消す*/
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border: none;
+}
+
+/* 全ページ */
+main {
+  display: block;
+  overflow-x: auto;
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: calc(100vh - 8px);
+  background: #c5eeff;
+  background-image: url(../images/pc6.webp);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 画面幅からはみだした場合に横スクロールにする */
+}
+/* main { */
+/* セクションを全画面表示 */
+/* position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: calc(100vh - 8px);
+} */
+
+/* 横スクロールバーのデザイン */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #c5eeff;
+  /* background-color: #0c68d2; */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0c68d2;
+  /* background-color: #c5eeff; */
+}
