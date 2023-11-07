@@ -430,7 +430,7 @@ h1 img {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-image: url(../images/pc\(2\).webp);
+  background-image: url(../images/pc2.webp);
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -582,37 +582,42 @@ h2::after {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+.skill-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.skill-item {
+  width: 55%;
+  padding: 10px;
+}
+.skill-item p {
+  margin-top: 10px;
+}
 .skill-inner {
   text-align: center;
-  /* margin: 140px auto; */
   width: 50%;
   background: rgba(255, 255, 255, 0.5);
-  /* padding: 65px 52px 65px 52px; */
   border-radius: 65px;
   color: #000;
+  /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
+  top: calc((45% - 1em) / 2);
+  left: 0;
+  right: 0;
+  line-height: 25px;
+  font-size: 15px;
 }
 .skill-height {
   position: relative;
   padding: 60px;
 }
-.skill-inner {
-  /* 正方形の幅-文字の高さ/2 で上下真ん中に要素がくる */
-  top: calc((45% - 1em) / 2);
-  left: 0;
-  right: 0;
-
-  text-align: center;
-  line-height: 25px;
-  font-size: 15px;
+.skill-text p {
+  text-align: left;
+  padding: 20px;
+  font-feature-settings: "palt";
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  font-size: 1vw;
 }
-/* .skill-inner ul { */
-/* display: flex; */
-/* justify-content: center; */
-/* } */
-/* .skill-inner p { */
-/* text-align: left; */
-/* padding: 0px 60px; */
-/* } */
 
 /* ワークス */
 .works {
