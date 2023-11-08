@@ -365,6 +365,7 @@ main {
   position: absolute;
   bottom: 37%;
   right: -5%;
+  z-index: 1;
 }
 
 /* .keyvisual_scroll {
@@ -706,7 +707,7 @@ h2::after {
 }
 /* コンタクト */
 .contact {
-  display: block;
+  display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -715,8 +716,12 @@ h2::after {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+.contact-inner {
+  max-width: 300px;
+  margin: 8% auto 0;
+}
 .Form {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
@@ -747,10 +752,10 @@ h2::after {
 }
 .Form-Item-Label {
   width: 100%;
-  max-width: 248px;
+  padding-bottom: 5px;
   letter-spacing: 0.05em;
-  font-weight: bold;
-  font-size: 18px;
+  /* font-weight: bold; */
+  font-size: 16px;
 }
 @media screen and (max-width: 480px) {
   .Form-Item-Label {
@@ -791,17 +796,19 @@ h2::after {
   }
 }
 .Form-Item-Input {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-left: 40px;
+  border: none;
+  border-radius: 99rem;
+
   padding-left: 1em;
   padding-right: 1em;
-  height: 30px;
+  height: 20px;
   flex: 1;
   width: 100%;
   max-width: 410px;
-  background: #eaedf2;
-  font-size: 18px;
+  background: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #333;
 }
 @media screen and (max-width: 480px) {
   .Form-Item-Input {
@@ -813,17 +820,19 @@ h2::after {
   }
 }
 .Form-Item-Textarea {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-left: 40px;
-  padding-left: 1em;
-  padding-right: 1em;
+  border: none;
+  border-radius: 15px;
+
+  padding: 1em;
+
   height: 216px;
   flex: 1;
   width: 100%;
   max-width: 410px;
-  background: #eaedf2;
-  font-size: 18px;
+  background: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #333;
 }
 @media screen and (max-width: 480px) {
   .Form-Item-Textarea {
@@ -835,19 +844,20 @@ h2::after {
   }
 }
 .Form-Btn {
-  border-radius: 6px;
-  margin-top: 32px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 280px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100px;
   display: block;
   letter-spacing: 0.05em;
-  background: #5bc8ac;
+  background: #0074e8;
   color: #fff;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: normal;
+  font-size: 15px;
 }
 @media screen and (max-width: 480px) {
   .Form-Btn {
