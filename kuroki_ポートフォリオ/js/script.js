@@ -26,6 +26,12 @@ $(function () {
         scrollElement.scrollLeft += e.deltaY;
     });
 
+    $('.sp_btn,.sp_nav li').on('click', function () {
+        $('.sp_btn').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+    });
+
+
     $('.works-slider').slick({
         autoplay: false,
         dots: false,

@@ -1,0 +1,39 @@
+@charset "utf-8";
+section {
+  display: flex;
+  width: 100vw;
+  min-width: 100vw;
+  height: calc(100vh - 8px);
+  background-image: url(../images/pc6.webp);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.thanks-inner {
+  display: block;
+  /* justify-content: center;
+  align-items: center; */
+  height: 100%;
+  margin: 20% auto;
+  text-align: center;
+}
+.thanks-inner p {
+  font-feature-settings: "palt";
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  font-size: 1vw;
+}
+
+.thanks-inner p:first-child {
+  padding-bottom: 20px;
+  font-family: "ab-tombo-bold";
+  font-size: 1.2vw;
+}
+.thanks-inner p:nth-child(2) {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.thanks-inner p:last-child {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}

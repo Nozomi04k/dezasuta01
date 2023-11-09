@@ -1,25 +1,44 @@
 @charset "utf-8";
 
-/* main {
-  /* すべてのコンテンツをこの要素に入れる */
-/* display: flex;
-  overflow-x: auto;
-} */
-
 main {
   display: flex;
-  overflow-x: auto;
-  /* セクションを全画面表示 */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section {
   position: relative;
   width: 100vw;
   min-width: 100vw;
   height: calc(100vh - 8px);
+  background-image: url(../images/pc6.webp);
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+/* main {
+  display: flex;
+  overflow-x: auto;
+  
+
   justify-content: center;
   align-items: center;
   background-image: url(../images/pc6.webp);
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
+} */
+
+.about-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+}
+.about-me {
+  width: 600px;
 }
 
 .name-box {
@@ -51,5 +70,5 @@ main {
   display: block;
   text-align: right;
   margin-top: 10px;
-  margin-right: -290px;
+  margin-right: -240px;
 }

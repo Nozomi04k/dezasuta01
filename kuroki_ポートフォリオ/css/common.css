@@ -46,6 +46,9 @@ img {
 /* 全ページ */
 main {
   background: #c5eeff;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 body {
   margin: 0;

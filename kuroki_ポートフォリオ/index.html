@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ナナイチデザイン</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="android-chrome-256x256.png">
     <meta name="description" content="ポートフォリオサイトです">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
@@ -66,6 +69,17 @@
                     </ul>
                 </nav>
             </div>
+
+            <div class="sp_btn"><span></span></div>
+            <nav class="sp_nav">
+                <ul>
+                    <li><a href="#concept">CONCEPT</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#skill">SKILL</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
             <h1><img src="images/Title.png" alt="ナナイチデザイン"></h1>
             <!-- <p>横スクロールするセクションはsectionタグで囲い、サイト全体を.wrapperで囲います。</p> -->
 
@@ -94,7 +108,7 @@
                         七色の光が一色だけ残り、<br>
                         わたしたちの目に青く映ります。<br>
                         目に映る色は青いけれど、もとは七色の光。</p>
-                    <p>あなたの色んな思いを、ひとつのデザインにする<br>
+                    <p>あなたの色んな思いを、<br class="sp_only">ひとつのデザインにする<br>
                         お手伝いをさせてください。</p>
                     <p>七色から一色へ。<br>「ナナイチデザイン」</p>
                 </div>
@@ -173,34 +187,37 @@
             <div class="contact-inner">
                 <p>お気軽にお問い合わせください。</p>
                 <p>下記項目のご入力をお願い致します。</p>
-                <div class="Form">
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label"> お名前</p>
-                        <input type="text" class="Form-Item-Input">
-                    </div>
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">メールアドレス</p>
-                        <input type="email" class="Form-Item-Input">
-                    </div>
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">お電話番号</p>
-                        <input type="tel" class="Form-Item-Input">
-                    </div>
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScsJdSPsMUvS5DYkuAKOmjx3QI4EPawSfygohbaaRdDVqndUw/formResponse"
+                    target="hidden_iframe" onsubmit="submitted=true;">
+                    <div class="Form">
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label"> お名前</p>
+                            <input type="text" name="entry.236859013" class="Form-Item-Input">
+                        </div>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label">メールアドレス</p>
+                            <input type="email" name="entry.441340089" class="Form-Item-Input">
+                        </div>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label">お電話番号</p>
+                            <input type="tel" name="entry.1380236115" class="Form-Item-Input">
+                        </div>
 
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label isMsg">お問い合わせ内容</p>
-                        <textarea class="Form-Item-Textarea"></textarea>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label isMsg">お問い合わせ内容</p>
+                            <textarea class="Form-Item-Textarea"></textarea>
+                        </div>
+                        <input type="submit" name="entry.1675256721" class="Form-Btn" value="送信">
                     </div>
-                    <input type="submit" class="Form-Btn" value="送信">
-                </div>
+                </form>
+                <script type="text/javascript">
+                    var submitted = false;
+                </script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+                    onload="if(submitted)  {window.location='thanks.html';}"></iframe>
 
-                <!-- <ul>
-                    <li>お名前</li>
-                    <li>メールアドレス</li>
-                    <li>お電話番号</li>
-                    <li>お問い合わせ内容</li>
-                </ul>
-                <p>送信</p> -->
+
             </div>
         </section>
 

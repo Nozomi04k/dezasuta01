@@ -1,4 +1,18 @@
 @charset "utf-8";
+section {
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: calc(100vh - 8px);
+  background-image: url(../images/pc6.webp);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+main {
+  display: block;
+  overflow-x: auto;
+  background: #c5eeff;
+}
 .work01 {
   max-width: 1000px;
   margin: 0 auto;
